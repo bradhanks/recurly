@@ -1,5 +1,8 @@
-const { exec } = require('child_process');
-const { isBuffer } = require('util');
+const pkg = require('child_process');
+
+const { exec } = pkg;
+
+
 let key = process.argv[2];
 
 exec(`dotenv set API_KEY "${key}"`, cb);

@@ -1,4 +1,4 @@
-const csv=require('csvtojson');
+const csv = require('csvtojson');
 
 function readCSV(){
     let entries = [];
@@ -26,4 +26,4 @@ function processEntries(entries){
     console.log(entries[0].Id + "  to " + entries[entries.length - 1].Id);
 }
 
-readCSV();
+module.exports = readCSV;

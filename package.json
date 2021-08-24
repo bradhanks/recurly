@@ -4,13 +4,12 @@
   "description": "Recurly API wrapper",
   "main": "./dist/index.js",
   "scripts": {
-    "start": "npm run build && node ./dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean && npm run build-babel",
     "clean": "rm -rf dist && mkdir dist",
     "build-babel": "babel -d ./dist ./app.js -s",
     "set-api": "node ./utils/setApi.js",
-    "fail-invoice": "node ./utils/failInvoice.js"
+    "fail-invoice": "npm i && npm run build && node ./utils/failInvoice.js"
   },
   "repository": {
     "type": "git",
@@ -23,16 +22,22 @@
   },
   "homepage": "https://github.com/bradhanks/recurly#readme",
   "dependencies": {
-    "recurly": "4.7.0",
+    "@babel/runtime": "^7.15.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "core-js": "^2.5.7",
+    "csvtojson": "2.0.10",
     "dotenv": "10.0.0",
-    "csvtojson": "2.0.10"
-
+    "recurly": "4.7.0",
+    "run-func": "^1.0.5"
   },
   "devDependencies": {
-    "@babel/core": "7.15.0",
-    "@babel/preset-env": "7.15.0",
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
     "@babel/register": "7.15.3",
-    "babel-cli": "6.26.0"
-
- }
+    "babel-cli": "6.26.0",
+    "babel-node": "0.0.1-security",
+    "babel-preset-env": "^1.7.0"
+  }
 }
