@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean && npm run build-babel",
     "clean": "rm -rf dist && mkdir dist",
-    "build-babel": "babel -d ./dist ./app.js -s"
+    "build-babel": "babel -d ./dist ./app.js -s",
+    "set-api": "node ./utils/setApi.js",
+    "fail-invoice": "node ./utils/failInvoice.js"
   },
   "repository": {
     "type": "git",
