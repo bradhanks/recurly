@@ -7,9 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean && npm run build-babel",
     "clean": "rm -rf dist && mkdir dist",
-    "build-babel": "babel -d ./dist ./app.js -s",
-    "set-api": "node ./utils/setApi.js",
-    "fail-invoice": "npm i && npm run build && node ./utils/failInvoice.js"
+    "build-babel": "babel -d ./dist ./src -s",
+    "set-api": "node ./dist/utils/setApi.js",
+    "start": "npm i && npm run build",
+    "fail-invoices": "run-func ./dist/app.js failAllInvoice",
+    "fail-invoice": "run-func ./dist/app.js failOneInvoice"
+
   },
   "repository": {
     "type": "git",
